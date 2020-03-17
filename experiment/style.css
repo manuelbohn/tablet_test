@@ -1,0 +1,730 @@
+/* ## General styles */
+/* This stuff can be ported from experiment to experiment.*/
+
+/* We want the page to sit flush inside the browser window - that means no margins or padding. Also, use a nice-looking serif font. */
+body {
+    width: 972.8px;
+	height: 729px;
+    padding: 0;
+	margin: 0;
+	font-family: Palatino Linotype, Bookman Antiqua, Palatino, serif;
+	font-size: 16px;
+	line-height: 20px;
+}
+
+/* We manage display using "slides". A slide is a <code>div</code> that takes up the entire page. Only one slide should be visible at a time. Navigation between slides is most sensibly accomplished using using buttons, rather than keyboard events. */
+.slide {
+	width: 1024px;
+	height: 729px;
+	display: none;
+	position: absolute;
+	margin: 0;
+}
+
+.background {
+	width: 1024px;
+	height: 660px;
+    opacity: 0.3;
+}
+
+.background_dis {
+	width: 100%;
+	height: 650px;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+
+input, select, button {font-family: Georgia; font-size: 14px;}
+
+button {
+	background: url(images/button-gradient.png);
+	border: 1px solid #999;
+	border-top: 1px solid #e0e0e0;
+	border-left: 1px solid #e0e0e0;
+	margin: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	height: 29px;
+	min-width: 70px;
+
+}
+button:active {
+	border-left: 1px solid #c9c9c9;
+	border-top: 1px solid #c9c9c9;
+	background: none;
+	background-color: #c9c9c9;
+    top: 50px;
+    left: 50px;
+}
+
+button[disabled] {
+	background: url(zen-button.png);
+	border: 1px solid #999;
+	border-top: 1px solid #e0e0e0;
+	border-left: 1px solid #e0e0e0;
+	cursor: not-allowed;
+}
+
+startButton {
+	background: url(images/button-gradient.png);
+	border: 1px solid #999;
+	border-top: 1px solid #e0e0e0;
+	border-left: 1px solid #e0e0e0;
+	margin: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	height: 35px;
+	min-width: 70px;
+    position: absolute;
+    bottom: 80px;
+    left: 410px;
+
+}
+
+startButton:active {
+	border-left: 1px solid #c9c9c9;
+	border-top: 1px solid #c9c9c9;
+	background: none;
+	background-color: #c9c9c9;
+    position: absolute;
+    bottom: 80px;
+    left: 410px;
+}
+
+startButton[disabled] {
+	background: url(zen-button.png);
+	border: 1px solid #999;
+	border-top: 1px solid #e0e0e0;
+	border-left: 1px solid #e0e0e0;
+	cursor: not-allowed;
+}
+
+nextButton {
+	background: lightgrey;
+	margin: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	height: 50px;
+	min-width: 100px;
+    position: absolute;
+    bottom: 0px;
+    left: 430px;
+    z-index: 2
+}
+
+nextButton:active {
+	background: none;
+	background-color: #c9c9c9;
+    bottom: 10px;
+    position: absolute;
+    bottom: 0px;
+    left: 430px;
+    z-index: 2
+}
+
+nextButton[disabled] {
+	background: url(zen-button.png);
+	border: 1px solid #999;
+	border-top: 1px solid #e0e0e0;
+	border-left: 1px solid #e0e0e0;
+	cursor: not-allowed;
+}
+
+
+trainButton {
+    position: absolute;
+    left:350;
+    top:100;
+    width:200;
+    font-family: sans-serif;
+    background-color: #c9c9c9;
+    border: none;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+}
+
+
+prefButton {
+    position: absolute;
+    left:150;
+    top:200;
+    width:200;
+    font-family: sans-serif;
+    background-color: #c9c9c9;
+    border: none;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+}
+
+meButton {
+    position: absolute;
+    left:150;
+    top:200;
+    width:200;
+    font-family: sans-serif;
+    background-color: #c9c9c9;
+    border: none;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+}
+
+adhocButton {
+    position: absolute;
+    left:550;
+    top:300;
+    width:200;
+    font-family: sans-serif;
+    background-color: #c9c9c9;
+    border: none;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+}
+
+
+novButton {
+    position: absolute;
+    left:550;
+    top:300;
+    width:200;
+    font-family: sans-serif;
+    background-color: #c9c9c9;
+    border: none;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+}
+
+
+
+infButton {
+    position: absolute;
+    left:550;
+    top:200;
+    width:200;
+    font-family: sans-serif;
+    background-color: #c9c9c9;
+    border: none;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+}
+
+
+disconButton {
+    position: absolute;
+    left:150;
+    top:300;
+    width:200;
+    font-family: sans-serif;
+    background-color: #c9c9c9;
+    border: none;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+}
+
+sortButton {
+    position: absolute;
+    left:350;
+    top:400;
+    width:200;
+    font-family: sans-serif;
+    background-color: #c9c9c9;
+    border: none;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+
+}
+
+
+
+.moveButton {
+    position: absolute;
+    bottom: 0px;
+    left: 435px;
+    width: 120px;
+    z-index: 3
+}
+
+
+.agent {
+    position: absolute;
+    bottom: 245px;
+    left: 320px;
+    width: 350px;
+}
+
+.point_agent_r {
+    position: absolute;
+    bottom: 245px;
+    left: 280px;
+    width: 350px;
+}
+
+
+.point_agent_l {
+    position: absolute;
+    bottom: 245px;
+    left: 360px;
+    width: 350px;
+}
+
+.agent_eat {
+    margin-left: auto;
+    margin-right: auto;
+    width: 700px;
+}
+
+.hill {
+    position: absolute;
+    bottom: 5px;
+    left: 320px;
+    width: 350px;
+    z-index: 1
+}
+
+
+
+.adhoc_agent {
+    position: absolute;
+    bottom: 361px;
+    left: 370px;
+    width: 300px;
+}
+
+
+
+.window {
+    position: absolute;
+    bottom: 350px;
+    left: 320px;
+    width: 400px;
+    z-index: 1;
+    opacity: 0.6
+}
+
+
+
+.animal_intro {
+    position: relative;
+    width: 150px;
+}
+
+.fruit_r {
+    position: absolute;
+    bottom: 225px;
+    left: 747px;
+    width: 150px;
+    z-index: 2
+}
+
+
+.fruit_l {
+    position: absolute;
+    bottom: 225px;
+    left: 100px;
+    width: 150px;
+    z-index: 2
+}
+
+
+.fruit_inf_r {
+    position: absolute;
+    bottom: 490px;
+    left: 605px;
+    width: 160px;
+    z-index: 2
+}
+
+.fruit_inf_r2 {
+    position: absolute;
+    bottom: 490px;
+    left: 810px;
+    width: 160px;
+    z-index: 2
+}
+
+
+.fruit_inf_l2 {
+    position: absolute;
+    bottom: 490px;
+    left: 5px;
+    width: 160px;
+    z-index: 2
+}
+
+.fruit_inf_l {
+    position: absolute;
+    bottom: 490px;
+    left: 200px;
+    width: 160px;
+    z-index: 2
+}
+
+
+
+.table_r {
+    position: absolute;
+    bottom: 80px;
+    left: 679px;
+    width: 280px;
+    z-index: 0
+}
+
+.table_l {
+    position: absolute;
+    bottom: 80px;
+    left: 30px;
+    width: 280px;
+    z-index: 0
+}
+
+
+.inf_ob_r {
+    position: absolute;
+    bottom: 100px;
+    left: 665px;
+    width: 350px;
+    z-index: 0
+}
+
+.inf_ob_l {
+    position: absolute;
+    bottom: 100px;
+    left: 15px;
+    width: 350px;
+    z-index: 0
+}
+
+
+.choice_inf_ob_r {
+    position: absolute;
+    bottom: 100px;
+    left: 665px;
+    width: 350px;
+    z-index: 0
+}
+
+.choice_inf_ob_l {
+    position: absolute;
+    bottom: 100px;
+    left: 15px;
+    width: 350px;
+    z-index: 0
+}
+
+
+
+
+
+
+
+.object_r {
+    position: absolute;
+    bottom: 0px;
+    left: 665px;
+    width: 350px;
+    z-index: 0
+}
+
+.object_l {
+    position: absolute;
+    bottom: 0px;
+    left: 15px;
+    width: 350px;
+    z-index: 0
+}
+
+
+
+.target_l {
+    position: absolute;
+    bottom: 300px;
+    left: 100px;
+    width: 200px;
+    z-index: 0
+}
+
+.target_r {
+    position: absolute;
+    bottom: 300px;
+    left: 700px;
+    width: 200px;
+    z-index: 0
+}
+
+
+.sample {
+    position: absolute;
+    bottom: 100px;
+    left: 400px;
+    width: 200px;
+    z-index: 0
+}
+
+
+
+
+/* ## Experiment-specific styles */
+/* This stuff will vary by experiment. */
+
+#logo-text {
+  font-weight: bold;
+  text-align: center;
+    font-size: 24;
+}
+
+#instructions {
+  text-align: center;
+}
+
+#odd-key, #even-key {
+  background-color: #e3e3e3;
+  padding: 2px;
+  border: 1px outset #cccccc;
+  font-family: Courier New;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.block-text {
+  width: 600px;
+  text-align: justify;
+  margin: 0 auto;
+  margin-bottom: 1em;
+}
+
+.block-text2 {
+  width: 600px;
+  text-align: justify;
+  margin: 0 auto;
+  margin-bottom: 1em;
+}
+
+.block-text3 {
+  width: 600px;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 1em;
+}
+
+
+.text {
+  font-size: 24px;
+  width: 500px;
+  text-align: center;
+  font-family: "Times New Roman";
+  margin: 0 auto;
+  margin-bottom: 1em;
+  position: absolute;
+  top: 100px;
+  left: 245px;
+}
+
+
+.look_agent_r {
+    position: absolute;
+    bottom: 245px;
+    left: 320px;
+    width: 350px;
+}
+
+
+.look_agent_l {
+    position: absolute;
+    bottom: 245px;
+    left: 320px;
+    width: 350px;
+}
+
+.selector_l {
+    position: absolute;
+    bottom: 100px;
+    left: 10px;
+    width: 355px;
+    height: 380px;
+    z-index: 3
+}
+
+.selector {
+    position: absolute;
+    bottom: 100px;
+    left: 20px;
+    width: 900px;
+    height: 600px;
+    z-index: 3
+}
+
+
+.selector_r {
+    position: absolute;
+    bottom: 100px;
+    left: 660px;
+    width: 355px;
+    height: 380px;
+    z-index: 3
+}
+
+
+.tree_r {
+    position: absolute;
+    bottom: 160px;
+    left: 620px;
+    width: 350px;
+    height: 550px;
+    z-index: 1
+}
+
+.tree_l {
+    position: absolute;
+    bottom: 160px;
+    left: 10px;
+    width: 350px;
+    height: 550px;
+    z-index: 1
+}
+
+
+#item_r {
+    position: absolute;
+    bottom: 450px;
+    left: 700px;
+    width: 150px;
+    z-index: 2
+}
+
+#item_l {
+    position: absolute;
+    bottom: 450px;
+    left: 130px;
+    width: 150px;
+    z-index: 2
+}
+
+#item_m {
+    position: absolute;
+    bottom: 550px;
+    left: 405px;
+    width: 150px;
+    z-index: 2
+}
+
+.agent_transition {
+    position: absolute;
+    bottom: 50px;
+    left: 125px;
+    width: 700px;
+    z-index: 2;
+}
+
+
+.discon_agent {
+    position: absolute;
+    bottom: 150px;
+    left: 300px;
+    width: 350px;
+    z-index: 2;
+}
+
+
+#legal {
+  margin: 0 auto;
+  margin-top: 1.5em;
+  font-size: 0.8em;
+}
+
+#number {
+  font-size: 42px;
+  font-family: Arial, sans-serif;
+  margin: 0 auto;
+  text-align: center;
+  width: 100px;
+  margin-top: 100px;
+}
+
+div#preload { display: none; }
+
+
+#myProgress {
+    width: 100%;
+    background-color: grey;
+}
+#myBar {
+    width: 1%;
+    height: 30px;
+    background-color: green;
+}
+
+.look_agent_r_inf {
+    position: absolute;
+    bottom: 350px;
+    left: 350px;
+    width: 350px;
+}
+
+
+.look_agent_l_inf {
+    position: absolute;
+    bottom: 350px;
+    left: 350px;
+    width: 350px;
+}
+
+.agent_inf {
+    position: absolute;
+    bottom: 350px;
+    left: 350px;
+    width: 350px;
+}
+
+.point_agent_r_inf {
+    position: absolute;
+    bottom: 350px;
+    left: 310px;
+    width: 350px;
+}
+
+
+.point_agent_l_inf {
+    position: absolute;
+    bottom: 350px;
+    left: 390px;
+    width: 350px;
+}
